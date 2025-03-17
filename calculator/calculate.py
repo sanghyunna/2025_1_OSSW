@@ -12,13 +12,13 @@ def div(a,b):
 
 if __name__ == '__main__':
     print('enter first num')
-    input1 = input("enter : ")
+    input1 = int(input("enter : "))
 
     print('enter action')
     act = input("enter : ")
 
     print('enter second num')
-    input2 = input("enter : ")
+    input2 = int(input("enter : "))
 
 
     if act == '+':
@@ -29,6 +29,9 @@ if __name__ == '__main__':
         result = mul(input1,input2)
     elif act == '/':
         result = div(input1,input2)
+    else:
+        print('wrong action')
+        result = None
 
     print(f'result is {result}')
 
