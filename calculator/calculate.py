@@ -11,15 +11,39 @@ def div(a,b):
     return a/b
 
 if __name__ == '__main__':
-    print('enter first num')
-    input1 = int(input("enter : "))
+    while True:
+        try:
+            print('enter first num')
+            input1 = int(input("enter : "))
+            break
+        except ValueError:
+            print('wrong input')
+            continue
 
-    print('enter action')
-    act = input("enter : ")
+    while True:
+        print('enter action')
+        act = input("enter : ")
+        if act in ['+','-','*','/']:
+            break
+        else:
+            print('wrong action')
+            continue
 
-    print('enter second num')
-    input2 = int(input("enter : "))
+    while True:
+        try:
+            print('enter second num')
+            input2 = int(input("enter : "))
+            
+            if act == '/' and input2 == 0:
+                print('cannot divide by 0')
+                continue
+            else:
+                break
 
+            
+        except ValueError:
+            print('wrong input')
+            continue
 
     if act == '+':
         result = plus(input1,input2)
